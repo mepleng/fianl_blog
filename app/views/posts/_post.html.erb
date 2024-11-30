@@ -1,0 +1,13 @@
+<turbo-frame id="post_<%= post.id %>">
+  <div id="post_<%= post.id %>">
+  <% if controller_name == "home" && action_name == "index" %>
+    <h3>🌻Title: <%= post.title%></h3>
+  <% end %>
+  
+  <% if controller_name == "home" && action_name == "authen" %>
+    <h3>🌻Title: <%= link_to post.title, post, data: { turbo_frame: "_top" }%></h3>
+  <% end %>
+  <p>Detail: <%= post.body %></p>
+  <p>Comments: <%= post.comments.count %></p>
+  </div>
+</turbo-frame>

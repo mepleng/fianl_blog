@@ -1,0 +1,7 @@
+<% comments.each do |comment| %>
+    <div id="comment_<%= comment.id %>">
+      <p><%= comment.content %></p>
+      <small>Posted at: <%= comment.created_at.strftime("%Y-%m-%d %H:%M") %></small>
+    </div>
+<% end %>
+  

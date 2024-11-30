@@ -1,0 +1,14 @@
+<h1 class="home-title">Home</h1>
+<h1 class="posts-title">Posts</h1>
+
+
+
+<turbo-frame id="posts">
+  <%= render @posts %>
+</turbo-frame>
+
+<p class="center-text">Sign in to create or interact with posts.</p>
+<div class="links-container">
+  <%= link_to "Log in", new_user_session_path, class: "btn btn-primary" %>
+  <%= link_to "Back to Home", root_path, class: "btn btn-secondary" %>
+</div>

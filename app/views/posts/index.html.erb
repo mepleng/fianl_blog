@@ -1,0 +1,24 @@
+<p class="notice-message"><%= notice %></p>
+
+<% content_for :title, "Posts" %>
+
+<div class="posts-container">
+  <h1 class="posts-title">Posts</h1>
+
+  <div id="posts" class="posts-list">
+    <% @posts.each do |post| %>
+      <div class="post-item">
+        <%= render post %>
+        <p>
+          <%= link_to "Show this post", post, class: 'btn btn-link' %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="links-container">
+  <%= link_to "New post", new_post_path, class: 'btn-link' %>
+  <%= link_to 'Back to Home', home_authen_path, class: 'btn btn-secondary' %>
+</div>
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authenticated Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #F6EEE0; 
+    }
+    .welcome-message {
+      text-align: center; 
+      color: #C3C6B1; 
+      font-size: 2.5rem; 
+      font-weight: bold; 
+      padding: 20px; 
+      border: 2px solid #3A482E; 
+      border-radius: 10px; 
+      margin: 20px auto; 
+      background-color: #81A684; 
+      width: 80%;
+    }
+    .content {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .posts-title {
+      font-size: 1.8rem; 
+      color: #487564; 
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Welcome Section -->
+  <div class="welcome-message">
+    Welcome to the Authenticated Page!
+  </div>
+
+  <!-- Content Section -->
+  <div class="content">
+    <p>You have successfully logged in.</p>
+    <h1 class="posts-title">Posts</h1>
+  </div>
+</body>
+</html>
+
+
+<turbo-frame id="posts">
+  <%= render 'posts/posts_list', posts: @posts %>
+</turbo-frame>
+
+<div class="btn-group-container">
+  <div class="btn-group">
+    <%= link_to 'Create a New Post', new_post_path, class: 'btn btn-primary' %>
+    <%= link_to "Back to Home", home_authen_path, class: "btn btn-secondary" %>
+    <%= link_to "Log out", root_path, class: "btn btn-danger" %>
+  </div>
+
